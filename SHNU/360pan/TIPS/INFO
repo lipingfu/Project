@@ -1,0 +1,923 @@
+svn revert /Users/liping/astro/svn_build/svn/360pan/SHNU_LP/Publication/Fu2018.pdf 
+
+
+
+git fsck   
+git fetch && git reset --hard origin/master
+brew --prefix
+
+cd $(brew --prefix ) && git fetch && git reset --hard origin/master
+
+brew install gnuplot --with-X11
+
+
+
+
+svn co --username liping_fu https://cea.svn.cloudforge.com/paper_2plus3pt_cfhtlens
+svn co --username liping_fu https://cea.svn.cloudforge.com/athena
+# passwd usuall caption
+
+
+ qsub  script.pbs  -l nodes=node36:ppn=16+node37:ppn=16
+
+
+
+
+ awk -F . '{print $1}' < junk.dat
+
+
+
+
+ Print 3rd column to last column in Awk
+awk '{for(i=3;i<=NF;++i) printf("%s ",  $i); printf "\n" }'
+
+
+
+
+ R CMD INSTALL mgcv_1.7-13.tar.gz
+
+
+set format y "%2.0t{/Symbol \327}10^{%L}"  # set gnuplot y axis as exp.
+
+svn checkout --username liping --password usualforserver http://svn2.xp-dev.com/svn/athena
+
+
+svn checkout --revision "{20090527}" svn://babel.iap.fr/ecosstat/trunk
+ passwd ecosstatadmin
+
+
+-----------------------------------------
+send the process to backgound:
+     screen programname
+     ctrl+a ctrl+d to detach 
+     or screen programname &
+To check the screen processes:
+   screen -r (show all)
+   screen -r id of process
+To name
+   screen -S "new" 
+To rename the sessionname:
+   Ctrl+a
+   sessionname newname
+   ctrl+a ctrl+d
+To kill a screen
+   screen -X -S ID kill
+Check history:
+   enter copy mode: C-a [
+   scroll up C-i
+   	  down C-f
+   exit copy mode: C-a ]
+
+screen `sleep 1m ; run.scr`
+-----------------------------------------
+zsh -c 'printf "%.5f\n" $(((12.84/9)/129/0.9))'   # run it in script
+
+
+create_shear_cat.py -i /Users/mkilbing/astro/simulations/CFHTLenS-Clone/Mar2012/data_CH/Clone_Mar2012_43.asc.cat -f ascii -x 0 -y 1 --e1 7 --e2 8 -w 2 -z 6 --zforminmax 3 --zmin 0.2 --zmax 1.3 --output_zhist=around/nz_Clone_Mar2012_43.asc.cat_0.2_1.3.hist -o around/Clone_Mar2012_43.asc.cat_0.2_1.3.ascii --coord_input deg --output_zcat=around/tmp_Clone_Mar2012_43.asc.cat_0.2_1.3 -e 0.3806 --invalid_mode='cut'
+
+Since you will have the same ascii input catalogues, you can just use it in pretty much the same way. This is for resample=1; for 2 or 3 you'll have to chage the e1, e2 and z columns. Note that zforminmax should always be 3, since we select in unresampled photo-z.
+The -e option adds the random ellipticity.
+[Mark this message as unread] [Delete this message]
+[Flag this message]
+10/4/2012
+Show
+-----------------------------------
+
+
+ sed -i "1i $N" run.input   insert variable $N into the first line of file run.input
+
+  ldacfilter -i $Cpath/{$one}zrgu_release.cat -o $name.filtered.cat -t OBJECTS -c "((((weight>0)AND(MASK<2))AND(Z_B<1.3))AND(Z_B>0.2))AND(SNratio>0);" 
+
+ldacjoin to keep few columns in ldac format.
+
+Control + space make set
+Alt + w make set again
+
+
+Alt + x goto-line
+
+Alt + x comment-region
+
+cat summaryselectioncshearT0003.txt | perl -ane '{ s/\(/ /g; s/\)/ /g; print }'
+
+
+grep -V "point" new.reg > new.nopoint.reg
+
+setenv PATH /home/fu/shape/:$PATH
+
+scp -r /home/fu/bin/lib/pgplot/ fu@cosmix3.iap.fr:~/bin/
+
+a2ps -Rf8 -B name.ps 
+
+chmod +644 (other read only)  chmod -R ugo -r n
+chmod + 444 -r-r-r
++666 -rw-rw-rw
++777 all
+
+
+imcopy 'A611R.fits[1113:5587, 448:4423]' A611.cut.fits 
+
+change password: passwd
+
+gqview&
+
+check history:  ps uxww
+
+scp -r fu@cosmix:~/bin ./
+
+grep -eaf | grep fu
+
+du -k
+
+du -sh 
+
+dos2unix
+
+creat link in the same disk:
+****************
+bash
+for im in xxxp yyyp ; do find /data/mix2/raid1/.... -name $im.fits ; done 
+for im in xxxp yyyp ; do ln -s find /data/mix2/.... -name $im.fits
+for im in sm; do rm `find ./ -name *.$im`;  done 
+exit
+****************
+
+change the name:
+Ñfor file in `/bin/ls | grep -e '-0+' ; do mv -vi $file 'echo $file | sed -e 's/-0+/+0+/'`; done
+
+awk '{FS = ","} {print $3, $4} ' 
+awk '{FS = ","}{if ($1 /image/ && $5 > 0 && $5 < 9350) print } '
+
+
+
+awk 'BEGIN { FS = "_" } ; { print $2 }' <x
+
+awk 'NR == k {print $0}' k=$k
+awk 'NR == 7 {print $0 "add here \n"} '
+
+awk '{split ($0,a, ".") ;print a[1] , a[2]}' 
+awk '{gsub ("w1", "sssss"); print }' 
+sed 's/(//g; s/)//g' liping.mean.ascii
+pl "< awk '$1 !~/#/{if ($7 == 1)print $0}'< LP_TS.cat" u 1:2,"" u 8:9
+
+$ mount /dev/sda1 /mnt/usb -t vfat
+$ umount /mnt/usb   (umount /dev/sda1)
+
+compress image:
+*****************
+#for hi in *.fits ; do imcopy $hi "$hi.fz[compress]" ; done
+for hi in *weight.fits ; do imcopy ${hi} "${hi}.fz[compress]" ; done
+
+for only one: imcopy x.fits 'x.fits.fz[compress]'
+*****************
+
+uncompress image:
+*****************
+for im in *.fits.fz ; do imcopy $im[1] ${im%.fz};done
+imcopy  'x.fits.fz[1]'  x.fits
+****************
+
+fit2Dpolymodel x 0 2 Psar < betty > look 
+get2Dpolymodel look < betty > out
+
+find . -name directoryname -type d
+
+
+
+*.scr > /dev/null &
+
+nohup x.scr &
+
+gcc x.c -c 
+
+grep format `find . -name "*.gnu"`| more
+
+
+gnuplot:
+set format y "% g"	normal
+set format y "% e"	everything x.xxxeyy
+set format y "10^{%T}"	10^xx
+
+
+perl -e 'print 0 if $ARGV[0]>=$ARGV[1]; print 1 if $ARGV[0]<$ARGV[1]' $value 2.5e-5
+
+
+perl -e 'print substr($ARGV[0],2,2), " ", substr($ARGV[0],4,2), "\n"'
+w1-1+3-CFHTLS_W_i_021410-041200.cat
+
+
+
+echo weight | set path = `sed -e 's/'$xname'//' `
+
+./configure --prefix=/home/nis/fu/bin/  (./configure --help)
+
+make clean
+make && make install (make: compile all; make install: copy the compiled to the right directory)
+
+EMCACS:
+
+alt+q: auto-enter
+ctrl+space set mark = start to copy
+ctrl+space set mark = finish copy
+ctrl+y paste
+
+ssh-keygen -t rsa     + enter enter enter 
+chmod 744 .ssh
+
+
+
+scp ~/.ssh/id_dsa.pub fu@merry.strw.leidenuniv.nl:/home/fu/.ssh/authorized_keys
+
+# scp no passwd
+ssh-copy-id -i ~/.ssh/id_rsa.pub kilbinger@mix3.iap.fr    yaunarbre
+
+
+change bash to csh:
+input csh
+
+or set the default file .bashrc : set change to export
+
+grep 'setroundshearshift_012' *.F
+
+
+tar compress link: tar -cvhf s.tar a b c
+
+tar -cvzf z.tgz z
+
+ps -a see your progressing
+
+ssh -p2266 -X fu@.......
+
+macro read 
+
+dev x11/postencap 
+
+grep -eaf |grep fu
+
+xview x.jpg&
+
+df -s 
+
+du -sh 
+
+
+****************
+sextractor
+****************
+
+sex image1, image2  
+
+image1: object detection
+image2: the measurements as the outputs.
+
+
+gs -h check the font (files) location gcc x.c -lm -std=c99
+
+
+####### perl
+check command:
+perldoc -f sleep
+
+compile:
+perl -wc test.pl
+
+run:
+perl test.pl lens0psf0.lst 12 12 -1 -1
+
+
+
+######### fits to ascii
+
+ldac2ascii -t LDAC_OBJECTS -c name.ldac -f "number column .."  
+
+or   ldac2ascii -ntable 3 -c name.ldac -f "number column .." 
+
+topcat -f fits name.ldac#2 
+
+stilts tcopy ifmt=fits in=name.ldac#2 out=out.asc ofmt=ascii
+
+or ofmt=csv
+
+######### c++ complier
+
+ g++ -I /usr/local/gsl/include -c -o test.o test.cc
+ g++ -g -O2 -L/usr/local/gsl/lib -o test test.o -lstdc++ -lgsl -lgslcblas
+
+
+
+
+
+ g++  -I /usr/local/gsl/include -I/usr/local/plplot/include  -I /usr/local/cfitsio/include -I /usr/local/Minuit/include  -I/usr/local/Dislin  -g -O2 -MT his.o -MD -MP -MF ".deps/his.Tpo" -c -o his.o his.cc
+
+
+ g++  -g -O2  -L/usr/local/gsl/lib -L/usr/local/plplot/lib -L/usr/local/cfitsio/lib/  -L/usr/local/Minuit/lib -L/usr/local/Dislin -o his  his.o -lboost_filesystem -lboost_program_options -lstdc++ -lcfitsio -lgsl -lgslcblas -lplplotcxxd  -lm  -lgsl -lgslcblas -lm 
+
+
+
+####### idl
+loadct,39;rainbow 0=black, 255=white, 220=red, 50=blue, 150=green
+!p.multi=[0,2,2]
+	device,filename=psfilename+'_psf.ps',xsize=20,ysize=20.,/encapsulated,/color
+;device,true_color=24,decomposed=0,retain=2    ;NEW LINE 
+;window,0,retain=2
+;write_png,'~jmarsham/filename.png',tvrd(true=1),r,g,b
+
+
+#############
+
+ldac2ascii -t LDAC_OBJECTS -c $scat -f "NUMBER X_IMAGE Y_IMAGE XWIN_IMAGE YWIN_IMAGE ALPHA_J2000 DELTA_J2000 A_IMAGE B_IMAGE THETA_IMAGE FLUX_RADIUS   MAG_AUTO MAGERR_AUTO FLUX_AUTO FLUXERR_AUTO FLAGS CLASS_STAR  ISOAREA_IMAGE  BACKGROUND  XMIN_IMAGE YMIN_IMAGE XMAX_IMAGE YMAX_IMAGE"
+
+
+filter -c input.fits.cat -o out.fits.cat -s "regfilter (\"$pathdir\" , X_IMAGE, Y_IMAGE)" -t LDAC_OBJECT
+
+tabselect  input.fits.cat+2 'regfilter("$pathdir",  X_IMAGE, Y_IMAGE)' out.cat
+
+#############
+2pcf, bin, kdtree, math, yorick
+Password: yaunarbre
+
+
+
+
+svn co svn+ssh://liping@202.121.49.52/home/liping/svn_build
+
+ svn --username kilbinger checkout svn+ssh://kilbinger@mix3.iap.fr/private/software/kilbinger/2pcf
+
+#~/.subversion/config .
+#There are several sections, after the line
+#[tunnel]
+#ssh = /usr/bin/ssh -p 2200 -l kilbinger
+#  setenv SSH 'ssh -l kilbinger'
+#  svn checkout svn+ssh://mix3.iap.fr/private/software/kilbinger/2pcf (yorick)
+
+ 
+# scp no passwd
+ssh-copy-id -i ~/.ssh/id_rsa.pub kilbinger@mix3.iap.fr    yaunarbre
+
+
+
+
+svn checkout --revision "{20090527}" svn://babel.iap.fr/ecosstat/trunk
+ passwd ecosstatadmin
+
+##########
+sv checkout --revision "{20090527}" svn://babel.iap.fr/ecosstat/trunk
+
+cvs:
+
+in shell:
+
+setenv CVSROOT :pserver:fu@cvs.planck.fr:/planck/cvs/ecosstat
+setenv ECOSSTAT /home/liping/astro/ECOSSTAT
+setenv ECOR $ECOSSTAT/R
+
+cd /home/liping/astro
+
+cvs login
+(passwd) ecosstat
+
+cvs checkout ECOSSTAT
+
+Compile:
+
+cd $ECOSSTAT/Makefile
+
+ln -sf Makefile.LP_laptop Makefile.host
+
+cd $ECOSSTAT//MonteCarlo/src
+
+make mkmc
+
+update:
+
+cd $ECOSSTAT
+
+cvs update  (-dp -d tools)
+
+commit:
+
+cvs commit
+
+run ring:
+
+mkdir ring_test
+cp config_mkmc ring_test
+
+
+ stilts help
+ stilts tmatch2 help
+
+stilts tmatch2 join=1and2 params=2 ifmt1=ascii ifmt2=ascii ofmt=ascii in1=cat.asc values1="col1 col2" values2="col1 col2" matcher=2d in2=input.cat out=match.cat icmd1='keepcols "col1 col2"' icmd2='keepcols "col1 col2"'
+
+
+gnuplot:
+
+> example code snippet follows
+
+> print GPVAL_TERM
+> if (GPVAL_TERM == "postscript") set output "file.ps"
+> plot blah
+
+> if (GPVAL_TERM=='x11') pause(-1)
+
+> When, and only when GPVAL_TERM is postscript, is a file created.  But
+> I always get the pause, no matter what GPVAL_TERM shows.
+
+> What am I doing wrong?
+
+The == operator is for numbers.
+To test equality of strings, you need:
+  if (GPVAL_TERM eq 'x11')  .... 
+
+#################
+Perl:
+
+echo "a[33] = aaaa" | perl -ane 's/a\[[0-9][0-9]\] =|a\[[0-9]\] =|;//g; print; '
+
+#### svn on shnu
+svn import /data1/liping/lib svn+ssh://liping@202.121.49.52/data2/liping/buildsvn/lib -m "import test"
+
+svn co svn+ssh://202.121.53.158/data2/liping/buildsvn/bin
+
+
+
+
+
+######## scp ssh sftp via sun1
+ on sun1:
+  for id in `ps -efa | grep ssh | grep liping | awk '{print $2}'`; do kill -1 $id; done
+
+on local pc:
+22 is the port for ssh
+ssh -L 3536:127.0.0.1:3536 liping@sun1.na.astro.it 'ssh -L 3536:127.0.0.1:22 liping@trantor.na.astro.it -N'
+
+
+ scp -P 3536 127.0.0.1:~/saveplot .
+ ssh -p 3536 127.0.0.1
+ sftp -oPort=3536 127.0.0.1
+
+
+####################
+build svn on cosmix5:
+
+svnadmin create svn
+
+svn import /home/nis/fu/C4algorithm/ svn+ssh://cosmix5.iap.fr/data/cosmix5raid2/liping/svn -m "import test dirctory"    
+
+svn co svn+ssh://cosmix5.iap.fr/data/cosmix5raid2/liping/svn 
+
+
+#### svn on self pc
+
+svn import /data1/liping/bin file:///data2/liping/buildsvn/bin -m "import bin dirctory"
+
+######## svn from external to internal:
+
+1 on sun1:
+   for id in `ps -efa | grep ssh | grep liping | awk '{print $2}'`; do kill -1 $id; done
+
+
+2 on pc:     
+  3690 is the port for svn
+  (the window will frozeen, keep the window, choose a or b)
+  a.   ssh -L 3536:127.0.0.1:3536 liping@sun1.na.astro.it 'ssh -L 3536:127.0.0.1:3690 liping@trantor.na.astro.it -N'  
+
+  b.   svn co svn://127.0.0.1:3536/home/liping/svn
+
+3 on sun1:
+  for id in `ps -efa | grep ssh | grep liping | awk '{print $2}'`; do kill -1 $id; done
+
+
+
+##### from internal to internal:
+
+on pc:
+svn checkout svn+ssh://trantor.na.astro.it/home/liping/svn
+# get old version  (it will make a new svn directory but store old version)
+svn co --revision 123 svn+ssh://trantor.na.astro.it/home/liping/svn
+# overwrite the exist svn with old version 
+svn update --revision 1
+# for certain old version made at certain date 
+--revision "{20090527}" 
+# more see 
+ svn help switch
+
+################################################
+
+
+
+
+netstat -na | grep 3690
+telnet 127.0.0.1 3690
+ ps aux | grep svn
+
+aclocal; autoconf ; automake -a; ./configure;  make
+
+
+##############
+
+2D histogram:
+stilts tpipe in=tmp.dat ifmt=ascii out=RG.cat ofmt=fits
+imcopy 'RG.cat+1[bin col1=200, col2=200]' 'test.fits'
+
+##############
+svn:  pass yaunarbre
+e .subversion/config&
+[tunnels]
+ssh = /usr/bin/ssh -p 22 -l kilbinger
+
+ svn checkout svn+ssh://terapix.iap.fr/private/software/kilbinger/hept 
+ svn checkout svn+ssh://terapix.iap.fr/private/software/kilbinger/kdtree
+ svn checkout svn+ssh://terapix.iap.fr/private/software/kilbinger/2pcf
+ svn checkout svn+ssh://terapix.iap.fr/private/software/kilbinger/math
+
+ 'public' tree version:
+ http://www2.iap.fr/users/kilbinge/athena/
+
+get old version
+svn checkout --revision "{20090527}" svn://babel.iap.fr/ecosstat/trunk
+ 
+##############
+
+
+wget --user local --password carscolldata -np -r -A "*stars.cat" http://vn80.phas.ubc.ca/SHEARCOLLAB/V1.95A_catalogues/FINAL/
+
+wget directory
+wget -r --no-parent --reject "index.html*" http://m
+
+
+
+### automake antoconf etc
+
+- cp -r C.auto.example youdir
+- emacs src/ranposangle.cc
+***********************
+	 can be skipped if cp -r C.auto.example youdir
+- autoscan
+- mv (edit) configure.scan configure.in
+- autoheader
+- autoconf
+*********************
+- automake
+- ./configue
+
+
+open ppt in linux : ooimpress
+
+
+
+AWK. Calculate mean, min and max
+awk '{if(min==""){min=max=$1}; if($1>max) {max=$1}; if($1< min) {min=$1}; total+=$1; count+=1} END {print total/count, min, max}' data.txt
+
+count column number
+awk 'BEGIN {FS=" "} END {print NF}' x.dat
+
+print column range
+ awk '! /#/{ if ($k == "\"\""){$k = 10}; for (i=1; i<k; i++) printf("%s ", $i); printf("\n")  }' k=$C < star.match.dat >>$FILENAME.sex.match.asc  
+
+
+modify fits head
+modhead $image CTYPE1 $CTYPE2
+
+
+  set rhmax = `awk ' ! /#/{if ($k == 1){if ( max==""){max=$7}; if($7>max) {max=$7} }} END { print max}' k=$C $FILENAME.sex.match.asc    `
+
+su - root (can keep all enviorment variable setting)
+
+
+# ecosstat svn
+svn   checkout svn://babel.iap.fr/ecosstat/trunk
+ (password ecosstatadmin)
+
+
+
+##
+chmod 4 read 1 execute 2 write
+
+
+###################
+# Martin's cov 
+1 stuff.c   choose the redshift distribution function and set the parameters there.
+2. corr.c set the xi_path 
+
+3. make the xi-medium directory according to the xi_path
+
+4. cov.c change the BIN_MIN BIN_MAX  sigma_epsilon ...
+   NUMBER_OF_BINS = 80;         is ok
+   Nmax_pair = 1000 and NMAX_PAIR2 = 200000.   if want to have quick run
+
+5. In the running dir, echo the largest theta and number of theta bins (according to xiEB) in
+to "thetaMapGamma" file.
+
+
+
+### change shell as non-root
+chsh
+
+
+
+perl -ane ' foreach $i (4 .. $#F-1){ print "$F[$i] ";} print "\n"' > aftermask.chip$j.asc
+
+
+
+
+#############  lam mpi on cluster
+
+1  save the following content into bhost
+
+------------------
+
+beo3.cluster2.na.astro.it cpu=8
+b21.cluster2.na.astro.it cpu=8
+b22.cluster2.na.astro.it cpu=8
+b23.cluster2.na.astro.it cpu=8
+b24.cluster2.na.astro.it cpu=8
+b25.cluster2.na.astro.it cpu=8
+b26.cluster2.na.astro.it cpu=8
+b27.cluster2.na.astro.it cpu=8
+b28.cluster2.na.astro.it cpu=8
+
+------------------
+so the node n0-8 is set as above
+
+2 lamboot bhost
+
+3 lamnodes    --  check nodes
+
+4 ##  use all nodes including local one (beo3)
+  mpirun -v -wd /home/liping/astro/MonteCarloTest/PMC/Lensing -np 9 N $ECOSSTAT/exec/mkpmc -c config_pmc     
+  ## use certain nodes
+  mpirun -v -wd /home/liping/astro/MonteCarloTest/PMC/Lensing -np 9 n1-8 $ECOSSTAT/exec/mkpmc -c config_pmc     
+  mpirun -v -wd /home/liping/astro/MonteCarloTest/PMC/Lensing -np 9 n1,2,4,8 $ECOSSTAT/exec/mkpmc -c config_pmc     
+
+4 check all processes:
+  cexec 'ps aux | grep liping| egrep -v "grep|ssh|ps|lamd"'     # (n1-8)
+  ps aux | grep liping| egrep -v "grep|ssh|ps|lamd"		#local node n0
+
+
+
+######### QBS
+1 write the following into x.jbl
+
+--------------
+### Set the job name
+#PBS -N myprogram
+
+### Declare myprogram non-rerunable
+#PBS -r n
+
+### Set the queue to "workq" or "bigmem", the only two available queues. 
+### "bigmem"; is a two node, four processor cluster, where each machine has 8GB 
+of memory.
+#PBS -q batch
+
+#PBS -l nodes=1:ppn=1
+
+
+export PATH=$PATH:/opt/lam-7.1.4/bin/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/intel/Compiler/11.1/059/lib/intel64
+:/opt/intel/Compiler/11.1/059/mkl/lib/em64t:/home/radovich/libs/gsl/lib/:/opt/AW
+/x86_64/local/lib:/opt/AW/x86_64/AWBASE/astro/lib
+
+cd /home/liping/astro/MonteCarloTest/PMC/Lensing
+
+/opt/lam-7.1.4/bin/lamboot
+/opt/lam-7.1.4/bin/mpirun -np 40 /home/liping/astro/ECOSSTAT-work/exec/mkpmc -c 
+/home/liping/astro/MonteCarloTest/PMC/Lensing/config_pmc
+-------------------
+
+
+2 qsub x.jbl  -- submit the job
+3 qstat -a   -- see jobID stat
+  qdel jobID  -- delete job
+
+
+
+##########
+see which lib is used:
+ldd $ECOSSTAT/exec/mkpmc  
+
+see 32 or 64 bite lib
+file /lib/libxxx.a   
+
+
+# to remove running yum process
+rm /var/run/yum.pid
+
+# saves the options for your printers. 
+ lpoptions -o Duplex=DuplexNoTumble
+
+
+change shell:  chsh
+
+
+
+lpr -P vstdell -o Resolution=default -o PageSize=A4 -o Duplex=DuplexNoTumble
+
+
+yum install  pdfjam
+pdfnup --nup 3x3 --paper a4paper --orient auto --pages all ring.Edinburgh.pdf
+
+
+
+######## on a cluster : send a command to all nodes 
+
+cexec ' h=`hostname`; echo $h' 
+
+
+cexec uptime   to check the computer busy state. shoule be less  than 1.
+
+gsl_sf_fact   calculate n!
+
+
+##########  open office for xls 
+ yum install openoffice.org-calc
+
+oocalc x.xls
+
+
+
+########## Latex
+
+\newcommand{\mk}[1]{{\color{red}#1}}
+ \documentclass[fleqn,referee]{aa}
+
+
+######## special fonts
+Character Table for cmmi10
+http://www.math.union.edu/~dpvc/jsMath/symbols/cmmi10.html
+
+Syntax for postscript enhanced option
+http://www.dcf.ds.mpg.de/fileadmin/mitarbeiter/Matthias_Schroeter/various/gnuplot/ps_guide.pdf
+
+Using TEX Fonts in the Gnuplot Postscript Terminal
+http://had.fmf.uni-lj.si/~horvat/publishing/gnuplot4.x/ps_fontfile_doc.pdf
+
+
+
+
+
+########## fftw
+I want to install sextractor-2.8.6 ( http://astromatic.iap.fr/software/sextractor ) on my Mac running Snow Leopard, and a problem with my fink fftw3 installation turned up.
+
+./configure --with-fftw=/sw/lib --with-fftw-incdir=/sw/include
+exits with the following error:
+
+checking /sw/include/fftw3.h usability... yes
+checking /sw/include/fftw3.h presence... yes
+checking for /sw/include/fftw3.h... yes
+checking for fftw_execute in -lfftw3... no
+configure: error: FFTW double precision library files not found in /sw/lib! Exiting.
+
+I have installed fftw3: fink list fftw
+i fftw3 3.2.2-1 Discrete Fourier Transform Lib (Ver 3)
+i fftw3-shlibs 3.2.2-1 Discrete Fourier Transform Lib (Ver 3)
+
+What do I have to do to configure & install sextractor?
+
+
+ 
+I would suggest compiling FFTW yourself (this is also true for the ATLAS library)! You will need to compile and install it twice. Once with
+./configure --enable-threads
+for double precision, and once more with
+./configure --enable-single --enable-threads
+for single precision.
+Note that the SExtractor version currently available in the development repository does not use double-precision version of the library anymore.
+- Emmanuel. 
+=======
+
+
+########################################################
+##### svn Martin's code
+svn co http://svn2.xp-dev.com/svn/athena
+svn co http://svn2.xp-dev.com/svn/astro_share
+
+liping   pass:regular one
+
+gawk '{ sub(/\|/, "\\&"); print }'
+
+
+
+Awk '{ave=($2-$1)/3; for(i=0;i<3;i++) {out=$1+i*ave; print ( out)}; print $2}'
+
+
+
+
+
+#look for installed rpm
+rpm -qa |grep intel
+
+
+
+
+
+updatedb  # to update the database from room
+
+wget -o log --no-check-certificate --random-wait -T 10 -t 0 --no-cache -mnp -nH --cut-dirs=1 --tries=0 "http://great.roe.ac.uk/data/g10_v1/training/" &
+
+wget -r -nd -Ptest ftp://cdsarc.u-strasbg.fr/pub/cats/J/ApJS/172/182/   (with download all files in 182 directory to ./test)
+
+
+
+######### Mac install packages of R
+
+R
+install.packages("inlines")
+16
+
+goto shell: cd /var/folders/ic/icDiLq4MHIy1D-KDjAAWNE+++TI/-Tmp-/RtmpbkDg1o/downloaded_packages
+sudo R CMD INSTALL inline_0.3.8.tgz 
+passwd
+
+
+
+
+
+plot_cov.sh Cov48.S07 -b
+
+chi-jing/wei --> yin-jing/wei
+
+b=57.2957795*asin(-0.867666*cos(ra/57.2957795)*cos(de/57.2957795)-0.1980764*sin(ra/57.2957795)*cos(de/57.2957795)+0.455984*sin(de/57.2957795))
+l=122.931918-57.2957795*asin((-0.9749188*sin(ra/57.2957795)+0.2225607*cos(ra/57.2957795))*cos(de/57.2957795)/cos(b/57.2957795))
+
+
+
+2pstat_smooth.sh -tmin 0.5 -tmax 32.5 -nt 15 -ext _W1m0m0_i -bintype LIN -nrb 100 -cov -
+
+
+ds9 -frame first A611R.cut2.fits -scale zscale -frame next A611G.cut2.fits -scale zscale -frame next A611Us.cut2.fits -scale zscale -rgb -red A611R.cut2.fits -scale zscale -green A611G.cut2.fits -scale zscale -blue A611Us.cut2.fits -scale zscale -view colorbar no
+
+
+
+**************************************************
+FFTW single precision library files not found :
+
+I would suggest compiling FFTW yourself (this is also true for the ATLAS library)! You will need to compile and install it twice. Once with
+./configure --enable-threads
+for double precision, and once more with
+./configure --enable-single --enable-threads
+for single precision.
+Note that the SExtractor version currently available in the development repository does not use double-precision version of the library anymore.
+
+
+
+_____________________________________________________
+Joey's mask to apply on mario's filter.c to remove
+
+
+
+exam -RUN_MODE 'MASK' -SEXCAT_IN $sexcat -MASK_REG mask.reg -SEXCAT_OUT fsex.cat -STAR_RADF 1.2 -SPKR_TTYPE 'PERI' -SPKR_THRESH 10000 -SPKR_STYPE 'PERI,AREA' -SPKR_SLEN '1.5,1.2' -SPKR_SWID '0.1,0.1' -SPKD_TTYPE 'PERI' -SPKD_THRESH 10 -SPKD_STYPE 'PERI,AREA' -SPKD_SLEN '2.2' -SPKD_SWID '0.2' -SPKD_ANG '0.0' -REG_EXCLUDE 'N' -REG_LABEL 'N' -REG_SEXFLAG 8 -REG_SGUNSAT 0.8 -REG_SGSAT 0.5 -REG_GROUP 'Y' -REG_MUMAXSAT 15.5 -BORD_TYPE 'NONE' -BORD_MARGIN '100,200,300,400' -IMGSIZE 10001 -PIXSCALE 0.232 -STAR_MAXMU 15.5 -WT_NAME $weight 
+
+gawk '{ sub(/\|\|/, ""); print }' mask.lp.reg | grep -v "point" > new.nopoint.reg
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Install altas with full lapack
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+set devdir = /Users/liping/Software
+
+
+
+
+
+
+
+mkdir BLD;  cd BLD
+../configure -b 64 -Fa alg -fPIC -D c -DPentiumCPS=2000 --shared --prefix=$devdir/local --with-netlib-lapack-tarfile=$devdir/lapack-3.4.1.tgz
+make; make build; make check; make ptcheck; make time;
+
+
+you need to change bld/lib/Makefile
+ and also change the bld/Make.top
+
+suppose your build dir is "bld", you need to update bld/Make.top and bld/lib/Makefile as the files I attached (make the backup first). and then 
+cd bld/lib
+make
+
+make libatlas.dylib     
+make libf77blas.dylib   
+make libptcblas.dylib   
+make libsatlas.dylib
+make libcblas.dylib     
+make liblapack.dylib    
+make libptf77blas.dylib 
+
+  make install
+
+for the linux, replace .dylib by .so in Makefile and Make.top
++++++++++++++++++++++++++++++++++++++++++++++++
+install sextractor:
+./configure --with-fftw=/Users/liping/Software/fftw-3.2.2/.libs --with-fftw-incdir=/Users/liping/Software/fftw-3.2.2/include --with-atlas=/Users/liping/Software/local
+++++++++++++++++++++++++++++++++++++++++++++++++
+intsall scamp:
+./configure --with-fftw-libdir=/Users/liping/Software/fftw-3.2.2/.libs --with-fftw-incdir=/Users/liping/Software/fftw-3.2.2/include --with-atlas-libdir=/Users/liping/Software/local/lib --with-atlas-incdir=/Users/liping/Software/local/include
+
+--------------------------------
+To get a plot with a box, copy the attached file into the directory
+XXX/yorick/YYY/g.
+I don't know the exact path in your case. It's where all the .gs files
+are. Then do a link
+work.gs -> boxed-medaxes.gs

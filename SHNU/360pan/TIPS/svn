@@ -1,0 +1,6 @@
+svn co svn+ssh://liping@202.121.49.52/home/liping/svn_build
+ svn checkout --username liping --password xingfuZHU http://svn2.xp-dev.com/svn/astro_share
+ svn checkout --username liping --password xingfuZHU http://svn2.xp-dev.com/svn/athena
+
+svn co svn://liping@babel.iap.fr/ecosstat
+ecosstatadmin

@@ -1,0 +1,70 @@
+
+
+
+
+
+Host shnu
+User liping
+Hostname 202.121.49.52
+
+Host shuli
+User user001
+Hostname 59.78.150.239
+
+
+Host tsinghua
+User lip
+Hostname www.thca.tsinghua.edu.cn
+
+Host fornax
+User liping
+Hostname fornax.na.infn.it
+
+Host tamburis
+User tamburis
+Hostname fornax.na.infn.it
+#passwd koala2
+
+
+Host beo
+User liping
+HostName 193.205.102.37
+
+
+Host sun1
+User liping
+Hostname calimero.na.astro.it
+
+Host Linux
+User liping
+Hostname 202.121.53.162
+
+
+Host Mario
+User anonymous
+Hostname ftp.pd.astro.it
+
+
+Host JWL
+User djw
+Hostname 202.121.53.159
+
+
+Host Mac
+User liping
+Hostname 202.121.53.163
+
+Host Linux
+User liping
+Hostname 202.121.53.162
+
+Host KDL
+User wangkuidong
+Hostname 202.121.53.135
+
+
+
+Host ZBL
+User zb
+Hostname 202.121.53.151
+
